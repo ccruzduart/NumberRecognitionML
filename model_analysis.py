@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+#
 from sklearn.datasets import load_digits
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import train_test_split, cross_val_score
@@ -18,7 +20,7 @@ for k in ks:
     score.mean()
     scores.append(score.mean())
 
-plt.plot(scores, ks)
-plt.xlabel('accuracy')
-plt.ylabel('k')
+plt.scatter(ks, scores)
+plt.xlabel('k')
+plt.ylabel('accuracy')
 plt.show()
