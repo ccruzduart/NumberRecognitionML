@@ -21,7 +21,7 @@ def createStorage():
 
 
 def ClassifierFactory(data, target):
-    model = KNeighborsClassifier(n_neighbors=5)
+    model = KNeighborsClassifier(n_neighbors=10)
     model.fit(data, target)
     return model
 
@@ -56,11 +56,15 @@ def PredictDigitService(image_path):
 
 def getImage():
     while True: 
-        image_option = input("Enter the number to be predicted: \n0, 4, 8\n>>")
+        image_option = input("Enter the number to be predicted: \n0, 3, 4, 5, 8\n>>")
         if image_option == '0':
             return os.path.join(os.getcwd(), 'Numbers', '0.png')
+        elif image_option == '3':
+            return os.path.join(os.getcwd(), 'Numbers', '3.png')
         elif image_option == '4':
             return os.path.join(os.getcwd(), 'Numbers', '4.png')
+        elif image_option == '5':
+            return os.path.join(os.getcwd(), 'Numbers', '5.png')
         elif image_option == '8':
             return os.path.join(os.getcwd(), 'Numbers', '8.png')
         else:
