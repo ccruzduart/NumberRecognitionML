@@ -10,6 +10,9 @@ def data_uri_to_image(uri):
     image = base64.b64decode(encoded_data)
     return Image.open(BytesIO(image))
 
+def image_from_file_path(file_path):
+    return Image.open(file_path)
+
 
 def replace_transparent_background(image):
     image_arr = np.array(image)
@@ -60,9 +63,9 @@ def to_grayscale(image):
     return image.convert('L')
 
 
-def process_image(data_uri):
-    image = data_uri_to_image(data_uri)
-
+def process_image(image_path):
+    #image = data_uri_to_image(data_uri)
+    image = image_from_file_path(image_path)
     is_empty = not image.getbbox()
     if is_empty:
         return None

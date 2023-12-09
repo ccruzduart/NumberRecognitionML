@@ -1,1 +1,0 @@
-curl 'http://localhost:5000/api/predict' -X "POST" -H "Content-Type: application/json" -d "{\"image\": \"data:image/png;base64,$(curl https://miro.medium.com/max/282/1*xpszL7jJrV5UTV7Xa-fgWQ.png | base64)\"}" -i
